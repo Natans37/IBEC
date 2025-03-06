@@ -24,11 +24,10 @@ public class LivroController {
         return livroService.obterTodos(paginacao);
     }
 
-
     @PostMapping
     public ResponseEntity<Livro> criarCliente(@RequestBody LivroReqDTO livroReqDTO, UriComponentsBuilder uriBuilder){
         Livro livro = livroService.criarLivro(livroReqDTO);
-        URI uri = uriBuilder.path("/clientes/{id}").buildAndExpand(livro.getId()).toUri();
+        URI uri = uriBuilder.path("/livros/{id}").buildAndExpand(livro.getId()).toUri();
         return ResponseEntity.created(uri).body(livro);
     }
 }
