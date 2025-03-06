@@ -1,5 +1,6 @@
 package com.ibec_api.domain.entity;
 
+import com.ibec_api.domain.dto.LivroReqDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -50,4 +51,22 @@ public class Livro {
     @ManyToOne
     @JoinColumn(name = "autor_id")
     private Autor autor;
+
+    public Livro(LivroReqDTO livroReqDTO) {
+        this.nome = livroReqDTO.nome();
+        this.imagem1Url = livroReqDTO.imagem1Url();
+        this.imagem2Url = livroReqDTO.imagem2Url();
+        this.imagem3Url = livroReqDTO.imagem3Url();
+        this.imagem4Url = livroReqDTO.imagem4Url();
+        this.imagem5Url = livroReqDTO.imagem5Url();
+        this.editora = livroReqDTO.editora();
+        this.isbn10 = livroReqDTO.isbn10();
+        this.isbn13 = livroReqDTO.isbn13();
+        this.dimensoes = livroReqDTO.dimensoes();
+        this.paginas = livroReqDTO.paginas();
+        this.preco = livroReqDTO.preco();
+        this.ativo = livroReqDTO.ativo();
+        this.estoque = livroReqDTO.estoque();
+        this.autor = livroReqDTO.autor();
+    }
 }
