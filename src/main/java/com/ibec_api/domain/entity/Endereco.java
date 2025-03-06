@@ -30,6 +30,6 @@ public class Endereco {
     private String complemento;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario")
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 }

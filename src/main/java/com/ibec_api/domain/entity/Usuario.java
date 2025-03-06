@@ -30,6 +30,8 @@ public class Usuario {
 
     private String email;
 
+    private String telefone;
+
     private LocalDateTime dataNasc;
 
     private String senha;

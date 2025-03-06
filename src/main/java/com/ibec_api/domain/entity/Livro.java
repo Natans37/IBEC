@@ -21,6 +21,16 @@ public class Livro {
 
     private String nome;
 
+    private String imagem1Url;
+
+    private String imagem2Url;
+
+    private String imagem3Url;
+
+    private String imagem4Url;
+
+    private String imagem5Url;
+
     private String editora;
 
     private String isbn10;
@@ -32,6 +42,10 @@ public class Livro {
     private Integer paginas;
 
     private Double preco;
+
+    private Boolean ativo;
+
+    private Integer estoque;
 
     @ManyToOne
     @JoinColumn(name = "autor_id")

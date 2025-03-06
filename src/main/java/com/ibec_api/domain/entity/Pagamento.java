@@ -28,6 +28,6 @@ public class Pagamento {
     private Integer cvv;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario")
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 }
