@@ -1,5 +1,6 @@
 package com.ibec_api.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.ibec_api.domain.dto.LivroReqDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -50,6 +51,7 @@ public class Livro {
 
     @ManyToOne
     @JoinColumn(name = "autor_id")
+    @JsonBackReference
     private Autor autor;
 
     public Livro(LivroReqDTO livroReqDTO) {

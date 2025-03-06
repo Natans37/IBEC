@@ -1,5 +1,6 @@
 package com.ibec_api.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class Autor {
     private String nome;
     private String sobrenome;
 
-    @OneToMany(mappedBy = "autor")
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Livro> livros;
 }
