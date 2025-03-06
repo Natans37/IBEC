@@ -2,7 +2,6 @@ package com.ibec_api.domain.dto;
 
 import com.ibec_api.domain.entity.Autor;
 
-import java.util.UUID;
 
 public record LivroReqDTO(
         String nome,
