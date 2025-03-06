@@ -51,7 +51,6 @@ public class Livro {
 
     @ManyToOne
     @JoinColumn(name = "autor_id")
-    @JsonBackReference
     private Autor autor;
 
     public Livro(LivroReqDTO livroReqDTO) {
