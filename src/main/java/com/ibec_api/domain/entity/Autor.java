@@ -1,7 +1,7 @@
 package com.ibec_api.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.ibec_api.domain.dto.AutorReqDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,4 +29,9 @@ public class Autor {
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<Livro> livros;
+
+    public Autor(AutorReqDTO autorReqDTO) {
+        this.nome = autorReqDTO.nome();
+        this.sobrenome = autorReqDTO.sobrenome();
+    }
 }
