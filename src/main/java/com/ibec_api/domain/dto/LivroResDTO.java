@@ -1,35 +1,22 @@
 package com.ibec_api.domain.dto;
 
-import com.ibec_api.domain.persistence.entity.Autor;
-import com.ibec_api.domain.persistence.entity.Categoria;
-import com.ibec_api.domain.persistence.entity.Editora;
 
-
-public record LivroReqDTO(
-
+public record LivroResDTO(
         String nome,
         String imagem1Url,
         String imagem2Url,
         String imagem3Url,
         String imagem4Url,
         String imagem5Url,
-
         String isbn10,
         String isbn13,
         String dimensoes,
-
         Integer paginas,
-
         Double preco,
-
         Boolean ativo,
-
         Integer estoque,
-
-        Autor autor,
-
-        Editora editora,
-
-        Categoria categoria
+        CategoriaResumoDTO categoria,
+        EditoraResumoDTO editora,
+        AutorResumoDTO autor
 ) {
 }

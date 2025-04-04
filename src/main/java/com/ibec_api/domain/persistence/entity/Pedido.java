@@ -1,4 +1,4 @@
-package com.ibec_api.domain.entity;
+package com.ibec_api.domain.persistence.entity;
 
 import com.ibec_api.domain.enums.StatusPedido;
 import jakarta.persistence.*;

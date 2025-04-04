@@ -1,11 +1,10 @@
-package com.ibec_api.controller;
+package com.ibec_api.web.controller;
 
 import com.ibec_api.domain.dto.AutorReqDTO;
 import com.ibec_api.domain.dto.AutorResDTO;
-import com.ibec_api.domain.dto.LivroReqDTO;
-import com.ibec_api.domain.entity.Autor;
-import com.ibec_api.domain.entity.Livro;
-import com.ibec_api.service.AutorService;
+import com.ibec_api.domain.persistence.entity.Autor;
+import com.ibec_api.domain.service.AutorService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,9 +17,9 @@ import java.net.URI;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/autor")
-public class AutorController {
-    @Autowired
+@RequestMapping("/categorias")
+@AllArgsConstructor
+public class CategoriaController {
     private AutorService autorService;
 
     @GetMapping
@@ -31,7 +30,7 @@ public class AutorController {
     @PostMapping
     public ResponseEntity<Autor> criarAutor(@RequestBody AutorReqDTO autorReqDTO, UriComponentsBuilder uriBuilder){
         Autor autor = autorService.criarAutor(autorReqDTO);
-        URI uri = uriBuilder.path("/autor/{id}").buildAndExpand(autor.getId()).toUri();
+        URI uri = uriBuilder.path("/categoria/{id}").buildAndExpand(autor.getId()).toUri();
         return ResponseEntity.created(uri).body(autor);
     }
 

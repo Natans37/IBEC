@@ -1,6 +1,6 @@
-package com.ibec_api.repository;
+package com.ibec_api.domain.persistence.repository;
 
-import com.ibec_api.domain.entity.Livro;
+import com.ibec_api.domain.persistence.entity.Livro;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

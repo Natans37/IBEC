@@ -1,10 +1,9 @@
-package com.ibec_api.controller;
+package com.ibec_api.web.controller;
 
-import com.ibec_api.domain.dto.AutorReqDTO;
 import com.ibec_api.domain.dto.LivroReqDTO;
-import com.ibec_api.domain.entity.Autor;
-import com.ibec_api.domain.entity.Livro;
-import com.ibec_api.service.LivroService;
+import com.ibec_api.domain.dto.LivroResDTO;
+import com.ibec_api.domain.persistence.entity.Livro;
+import com.ibec_api.domain.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,13 +22,8 @@ public class LivroController {
     private LivroService livroService;
 
     @GetMapping
-    public Page<Livro> obterTodosLivros(@PageableDefault(size = 10)Pageable paginacao){
+    public Page<LivroResDTO> obterTodosLivros(@PageableDefault(size = 10)Pageable paginacao){
         return livroService.obterTodos(paginacao);
-    }
-
-    @GetMapping("/editora")
-    public Page<Livro> obterLivrosPorEditora(@PageableDefault(size = 10)Pageable paginacao, @RequestParam String editora) {
-        return livroService.obterPorEditora(paginacao, editora);
     }
 
     @PostMapping

@@ -1,6 +1,6 @@
-package com.ibec_api.repository;
+package com.ibec_api.domain.persistence.repository;
 
-import com.ibec_api.domain.entity.Autor;
+import com.ibec_api.domain.persistence.entity.Autor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

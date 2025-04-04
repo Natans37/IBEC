@@ -2,12 +2,10 @@ package com.ibec_api.domain.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-import java.util.UUID;
 
-public record AutorReqDTO(
+public record CategoriaReqDTO(
         @NotBlank
         String nome,
-        @NotBlank
-        String sobrenome
+        String descricao
 ) {
 }

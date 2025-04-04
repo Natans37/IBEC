@@ -1,4 +1,4 @@
-package com.ibec_api.domain.entity;
+package com.ibec_api.domain.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,25 +7,27 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "pagamentos")
+@Table(name = "enderecos")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pagamento {
+public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nomeCartao;
+    private String cep;
 
-    private String sobrenomeCartao;
+    private String rua;
 
-    private Integer numeroCartao;
+    private String cidade;
 
-    private Integer expiracao;
+    private String uf;
 
-    private Integer cvv;
+    private Integer numero;
+
+    private String complemento;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")

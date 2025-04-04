@@ -1,7 +1,6 @@
-package com.ibec_api.domain.entity;
+package com.ibec_api.domain.persistence.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

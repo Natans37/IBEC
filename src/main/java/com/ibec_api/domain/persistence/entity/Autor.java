@@ -1,4 +1,4 @@
-package com.ibec_api.domain.entity;
+package com.ibec_api.domain.persistence.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ibec_api.domain.dto.AutorReqDTO;

@@ -1,12 +1,10 @@
 package com.ibec_api.domain.dto;
 
 import java.util.List;
-import java.util.UUID;
 
-public record AutorResDTO(
-        UUID id,
+public record EditoraResDTO(
+        Long id,
         String nome,
-        String sobrenome,
         List<LivroResDTO> livros
 ) {
 }

@@ -1,6 +1,5 @@
-package com.ibec_api.domain.entity;
+package com.ibec_api.domain.persistence.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.ibec_api.domain.dto.LivroReqDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -33,8 +32,6 @@ public class Livro {
 
     private String imagem5Url;
 
-    private String editora;
-
     private String isbn10;
 
     private String isbn13;
@@ -53,6 +50,14 @@ public class Livro {
     @JoinColumn(name = "autor_id")
     private Autor autor;
 
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
+    @ManyToOne
+    @JoinColumn(name = "editora_id")
+    private Editora editora;
+
     public Livro(LivroReqDTO livroReqDTO) {
         this.nome = livroReqDTO.nome();
         this.imagem1Url = livroReqDTO.imagem1Url();
@@ -69,5 +74,6 @@ public class Livro {
         this.ativo = livroReqDTO.ativo();
         this.estoque = livroReqDTO.estoque();
         this.autor = livroReqDTO.autor();
+        this.categoria = livroReqDTO.categoria();
     }
 }
